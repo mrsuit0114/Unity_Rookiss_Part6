@@ -1,0 +1,15 @@
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\bin\Debug\net6.0\study.exe
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\bin\Debug\net6.0\study.deps.json
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\bin\Debug\net6.0\study.runtimeconfig.json
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\bin\Debug\net6.0\study.dll
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\bin\Debug\net6.0\study.pdb
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.csproj.AssemblyReference.cache
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.GeneratedMSBuildEditorConfig.editorconfig
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.AssemblyInfoInputs.cache
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.AssemblyInfo.cs
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.csproj.CoreCompileInputs.cache
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.dll
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\refint\study.dll
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.pdb
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\study.genruntimeconfig.cache
+D:\ForUnity\Unity_Rookiss_Part6\Study\study\study\obj\Debug\net6.0\ref\study.dll
