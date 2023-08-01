@@ -1,12 +1,18 @@
+// MVC
 // Model  -  데이터
 // View  -  UI
 // Controller  -  데이터를 어떻게 할지
 
 
+// Razor Pages
+// M
+// VC
+// M - V - VM
+
 var builder = WebApplication.CreateBuilder(args);
 
-//추가
-builder.Services.AddControllersWithViews();
+//변경
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -24,12 +30,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-//app.MapGet("/", () => "Hello World!");
-
-//추가
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//변경
+app.MapRazorPages();
 
 
 app.Run();
