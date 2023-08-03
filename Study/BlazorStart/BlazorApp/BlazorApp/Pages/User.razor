@@ -1,5 +1,64 @@
-﻿<h3>User</h3>
+﻿@page "/user"
+@using BlazorApp.Data;
+
+<h3>Online Users</h3>
+
+<p>
+	Users: <b>@_users.Count()</b>
+</p>
+
+<br />
+
+<ul class="list-group">
+	@foreach(var user in _users)
+	{
+		<li @key="user" class="list-group-item">
+			<label>@user.Name</label>
+			<button type="button" class="btn btn-link" @onclick="(() =>KickUser(user))">[Kick]</button>
+		</li>
+	}
+</ul>
+
+<br/>
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<input class="form-control" placeholder="Add User" @bind-value="_inputName" />
+		</div>
+		<div class="col">
+			<button class="btn btn-primary" type="button" @onclick="AddUser">Add a User</button>
+		</div>
+	</div>
+</div>
 
 @code {
 
+	List<UserData> _users = new List<UserData>();
+
+	string _inputName;
+
+	protected override void OnInitialized()
+	{
+		_users.Add(new UserData() { Name = "heaa1" });
+		_users.Add(new UserData() { Name = "heaa2" });
+		_users.Add(new UserData() { Name = "heaa3" });
+	}
+
+	void AddUser()
+	{
+		_users.Add(new UserData() { Name = _inputName });
+		_inputName = "";
+	}
+
+	void KickUser(UserData user)
+	{
+		_users.Remove(user);
+	}
+
 }
+
+
+@*namespace명시 -> userData
+	부트스트랩은 어디서 사용한다고 나왔길래 여기서 사용가능할지
+*@
