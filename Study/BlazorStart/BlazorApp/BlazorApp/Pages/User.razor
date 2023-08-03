@@ -3,23 +3,7 @@
 
 <h3>Online Users</h3>
 
-<p>
-	Users: <b>@_users.Count()</b>
-</p>
-
-<br />
-
-<ul class="list-group">
-	@foreach(var user in _users)
-	{
-		<li @key="user" class="list-group-item">
-			<label>@user.Name</label>
-			<button type="button" class="btn btn-link" @onclick="(() =>KickUser(user))">[Kick]</button>
-		</li>
-	}
-</ul>
-
-<br/>
+<ShowUser Users="_users" CallbackAddUser=@((string a)=>AddUser(a)) CallbackKickUser=@((UserData a)=>KickUser(a)) ></ShowUser>
 
 <div class="container">
 	<div class="row">
@@ -27,7 +11,7 @@
 			<input class="form-control" placeholder="Add User" @bind-value="_inputName" />
 		</div>
 		<div class="col">
-			<button class=@_btnClass type="button" @onclick="AddUser" disabled=@(_users.Count() >=5)>Add a User</button>
+			<button class=@_btnClass type="button" @onclick=@(()=> AddUser(_inputName)) disabled=@(_users.Count() >=5)>Add a User</button>
 		</div>
 	</div>
 </div>
@@ -46,25 +30,15 @@
 		_users.Add(new UserData() { Name = "heaa3" });
 	}
 
-	void AddUser()
+	void AddUser(string a)
 	{
-		_users.Add(new UserData() { Name = _inputName });
+		_users.Add(new UserData() { Name = a });
 		_inputName = "";
-		RefreshButton();
 	}
 
 	void KickUser(UserData user)
 	{
 		_users.Remove(user);
-	}
-
-	void RefreshButton()
-	{
-		if (_users.Count % 2 == 0)
-			_btnClass = "btn btn-warning";
-		else
-			_btnClass = "btn btn-primary";
-
 	}
 }
 

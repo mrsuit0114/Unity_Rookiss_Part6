@@ -1,0 +1,34 @@
+﻿@using BlazorApp.Data;
+<p>
+	Users: <b>@Users.Count()</b>
+</p>
+<br />
+<ul class="list-group">
+	@foreach (var user in Users)
+	{
+			<li @key="user" class="list-group-item">
+				<label>@user.Name</label>
+				<button type="button" class="btn btn-link" @onclick="(() =>KickUser(user))">[Kick]</button>
+			</li>
+	}
+</ul>
+<br/>
+@code {
+	[Parameter]
+	public List<UserData> Users {get;set;}
+	[Parameter]
+	public EventCallback<UserData> CallbackKickUser { get; set; }
+	[Parameter]
+	public EventCallback<string> CallbackAddUser { get; set; }
+
+	public void AddUser(string userName)
+	{
+		CallbackAddUser.InvokeAsync(userName);
+	}
+
+	public void KickUser(UserData user)
+	{
+		CallbackKickUser.InvokeAsync(user);
+	}
+
+}
