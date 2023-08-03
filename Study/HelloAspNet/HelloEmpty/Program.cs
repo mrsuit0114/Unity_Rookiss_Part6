@@ -9,6 +9,10 @@
 // VC
 // M - V - VM
 
+// WebAPI
+// M
+// C
+
 var builder = WebApplication.CreateBuilder(args);
 
 //º¯°æ

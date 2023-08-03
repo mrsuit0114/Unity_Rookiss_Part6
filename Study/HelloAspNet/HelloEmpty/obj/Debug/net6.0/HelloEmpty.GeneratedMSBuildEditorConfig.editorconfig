@@ -15,11 +15,3 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\ForUnity\Unity_Rookiss_Part6\Study\HelloAspNet\HelloEmpty
 build_property._RazorSourceGeneratorDebug = 
-
-[D:/ForUnity/Unity_Rookiss_Part6/Study/HelloAspNet/HelloEmpty/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ForUnity/Unity_Rookiss_Part6/Study/HelloAspNet/HelloEmpty/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
