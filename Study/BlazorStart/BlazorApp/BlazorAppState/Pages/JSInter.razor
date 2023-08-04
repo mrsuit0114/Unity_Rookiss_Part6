@@ -1,0 +1,35 @@
+﻿@page "/JSInter"
+@inject IJSRuntime JSRuntime
+
+
+<h3>JSInter</h3>
+
+<div>
+	<button @onclick="HelloWorld">
+		ddd
+	</button>
+</div>
+
+<div>
+	<button @onclick="InputName">
+		inputname
+	</button>
+	<p>@_name</p>
+</div>
+
+@code {
+
+	string _name = "";
+	public async void HelloWorld()
+	{
+		await JSRuntime.InvokeVoidAsync("testFunction.helloWorld", null);		
+	}
+
+	public async void InputName()
+	{
+		_name = await JSRuntime.InvokeAsync<string>("testFunction.inputName", "Input Name");
+
+		StateHasChanged();
+	}
+
+}

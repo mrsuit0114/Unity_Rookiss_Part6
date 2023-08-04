@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorApp\\BlazorAppState\\wwwroot\\test.js",
+      "PackagePath": "staticwebassets\\test.js"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BlazorAppState.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

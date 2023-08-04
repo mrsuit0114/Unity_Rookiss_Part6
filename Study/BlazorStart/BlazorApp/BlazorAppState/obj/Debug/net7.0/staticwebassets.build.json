@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hsGcNTfWJimPVJQcLxN7rX5c9cG1JVEjJj7Akm0coIs=",
+  "Hash": "rCOJKXOfW3tdfrZg5+7qZdQP0os9DE/ft+wPLVgMGiU=",
   "Source": "BlazorAppState",
   "BasePath": "_content/BlazorAppState",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorApp\\BlazorAppState\\wwwroot\\test.js",
+      "SourceId": "BlazorAppState",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorApp\\BlazorAppState\\wwwroot\\",
+      "BasePath": "_content/BlazorAppState",
+      "RelativePath": "test.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\test.js"
     }
   ]
 }
