@@ -6,38 +6,108 @@
 
 <h3>Ranking</h3>
 
-@if (_gameResults == null)
-{
-        <p><em>Loading...</em></p>
-}
-else
-{
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>UserName</th>
-                    <th>Score</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-            @foreach (var gameResult in _gameResults)
-            {
+<AuthorizeView>
+    <Authorized>
+        @if (_gameResults == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>UserName</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var gameResult in _gameResults)
+                    {
                         <tr>
                             <td>@gameResult.UserName</td>
                             <td>@gameResult.Score</td>
                             <td>@gameResult.Date</td>
                         </tr>
+                    }
+                </tbody>
+            </table>
+
+            <p>
+                <button @onclick="AddGameResult">AddGameResult</button>
+            </p>
+
+            @if (_showPopup)
+            {
+                <div class="modal" style="display:block" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Add/Update GR</h3>
+                                <button type="button" class="close" @onclick="ClosePopup">
+                                    <span area-hidden="true">X</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="UserName">UserName</label>
+                                <InputText class="form-control" placeholder="UserName" @bind-Value="_gameResult.UserName"/>
+                                <label for="UserName">Score</label>
+                                <InputNumber class="form-control" @bind-Value="_gameResult.Score"/>
+                                <button @onclick="SaveGameResult">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }
-            </tbody>
-        </table>
-}
+        }
+    </Authorized>
+    <NotAuthorized>
+        <p>you not Author</p>
+    </NotAuthorized>
+
+</AuthorizeView>
+
+
 
 @code {
-	List<GameResult> _gameResults;
+    List<GameResult> _gameResults;
+
+    bool _showPopup = false;
+    GameResult _gameResult;
 
     protected override async Task OnInitializedAsync()
     {
         _gameResults = await RankingService.GetGameResultAsync();
+    }
+
+    void AddGameResult()
+    {
+        _showPopup = true;
+        _gameResult = new GameResult() { Id = 0 };
+    }
+
+    void ClosePopup()
+    {
+        _showPopup = false;
+    }
+
+    async Task SaveGameResult()
+    {
+        if (_gameResult.Id == 0)  // 새로 만든
+        {
+            _gameResult.Date = DateTime.Now;
+            var result = RankingService.AddGameResult(_gameResult);
+        }
+        else
+        {
+
+        }
+        // 추가한 부분만 리스트 변경하는 것으로 최적화하는 것보다 현재 데이터를 싸그리 가져오는게 깔끔하다함
+        // 오히려 로직이 꼬이는 부분이 많고 웹에서 그정도로 최적화할 필요는 없다함
+        _gameResults = await RankingService.GetGameResultAsync();
+        _showPopup = false;
     }
 }
