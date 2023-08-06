@@ -1227,14 +1227,14 @@
           }
         }
       },
-      "SharedDate/1.0.0": {
+      "SharedData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/SharedDate.dll": {}
+          "bin/placeholder/SharedData.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SharedDate.dll": {}
+          "bin/placeholder/SharedData.dll": {}
         }
       }
     }
@@ -3882,10 +3882,10 @@
         "version.txt"
       ]
     },
-    "SharedDate/1.0.0": {
+    "SharedData/1.0.0": {
       "type": "project",
-      "path": "../SharedDate/SharedDate.csproj",
-      "msbuildProject": "../SharedDate/SharedDate.csproj"
+      "path": "../SharedDate/SharedData.csproj",
+      "msbuildProject": "../SharedDate/SharedData.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3894,7 +3894,7 @@
       "Microsoft.EntityFrameworkCore >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.9",
-      "SharedDate >= 1.0.0",
+      "SharedData >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -3926,8 +3926,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj": {
-              "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj"
+            "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj": {
+              "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj"
             }
           }
         }

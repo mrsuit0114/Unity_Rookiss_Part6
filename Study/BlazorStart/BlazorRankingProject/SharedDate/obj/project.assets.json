@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj",
-      "projectName": "SharedDate",
-      "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj",
+      "projectUniqueName": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj",
+      "projectName": "SharedData",
+      "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj",
       "packagesPath": "C:\\Users\\woosa\\.nuget\\packages\\",
       "outputPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\obj\\",
       "projectStyle": "PackageReference",

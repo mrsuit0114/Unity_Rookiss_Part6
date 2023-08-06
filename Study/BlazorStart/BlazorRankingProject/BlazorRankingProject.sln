@@ -5,9 +5,9 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorRankingProject", "BlazorRankingProject\BlazorRankingProject.csproj", "{E67021FD-6C6C-41A9-A359-0E25134AFE14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{8E43C1A9-3BD9-4E98-970E-87622A354B34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{8E43C1A9-3BD9-4E98-970E-87622A354B34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedDate", "SharedDate\SharedDate.csproj", "{44D0DA31-56EC-4040-AAA2-582178D1007A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedData", "SharedDate\SharedData.csproj", "{44D0DA31-56EC-4040-AAA2-582178D1007A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

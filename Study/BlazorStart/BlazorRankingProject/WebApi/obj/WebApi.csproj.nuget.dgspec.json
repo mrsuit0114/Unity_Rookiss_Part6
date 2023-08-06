@@ -4,12 +4,12 @@
     "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj": {
+    "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj",
-        "projectName": "SharedDate",
-        "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj",
+        "projectUniqueName": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj",
+        "projectName": "SharedData",
+        "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj",
         "packagesPath": "C:\\Users\\woosa\\.nuget\\packages\\",
         "outputPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\obj\\",
         "projectStyle": "PackageReference",
@@ -84,8 +84,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj": {
-                "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedDate.csproj"
+              "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj": {
+                "projectPath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\SharedDate\\SharedData.csproj"
               }
             }
           }

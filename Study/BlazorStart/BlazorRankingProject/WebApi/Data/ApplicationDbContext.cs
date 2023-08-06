@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SharedDate.Models;
+using SharedData.Models;
 
 namespace WebApi.Data
 {

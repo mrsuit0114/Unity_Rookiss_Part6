@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MjaB8yuMuEdv7qcXw8V924cz3+UPOyIBeGBkH0UDnESlPIo2HCy4ZoJcwRSP/s2Knkh0xrZNwEdDlp+pE0lpSA==",
+  "dgSpecHash": "RNIuRl8CDof/tihgVPYBv6G/aYEbSolpjkyHrdiwMRyoEkyP0jZMAlTOaVyFYjmroKX1WLyEKr22UiYJKIT2BA==",
   "success": true,
   "projectFilePath": "D:\\ForUnity\\Unity_Rookiss_Part6\\Study\\BlazorStart\\BlazorRankingProject\\BlazorRankingProject\\BlazorRankingProject.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\woosa\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\woosa\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\woosa\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\woosa\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\woosa\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\woosa\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\woosa\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

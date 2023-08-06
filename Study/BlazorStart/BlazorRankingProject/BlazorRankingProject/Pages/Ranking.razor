@@ -1,6 +1,6 @@
 ﻿@page "/ranking"
 @using BlazorRankingProject.Data.Services
-@using BlazorRankingProject.Data.Models
+@using SharedData.Models
 
 @inject RankingService RankingService
 
@@ -113,11 +113,11 @@
         if (_gameResult.Id == 0)  // 새로 만든
         {
             _gameResult.Date = DateTime.Now;
-            var result = RankingService.AddGameResult(_gameResult);
+            var result = await RankingService.AddGameResult(_gameResult);
         }
         else  // 수정하는 것
         {
-            var result = RankingService.UpdateGameResult(_gameResult);
+            var result = await RankingService.UpdateGameResult(_gameResult);
         }
         // 추가한 부분만 리스트 변경하는 것으로 최적화하는 것보다 현재 데이터를 싸그리 가져오는게 깔끔하다함
         // 오히려 로직이 꼬이는 부분이 많고 웹에서 그정도로 최적화할 필요는 없다함

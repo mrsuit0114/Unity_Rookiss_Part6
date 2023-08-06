@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SharedDate.Models;
+using SharedData.Models;
 using WebApi.Data;
 
 namespace WebApi.Controllers
@@ -22,8 +22,15 @@ namespace WebApi.Controllers
         }
 
         // Create
+        [HttpPost]
+        public GameResult AddGameResult([FromBody] GameResult gameResult)
+        {
+            _context.GameResults.Add(gameResult);
+            _context.SaveChanges();
 
-        // Reat
+            return gameResult;
+        }
+        // Read
         [HttpGet]
         public List<GameResult> GetGameResults()
         {
@@ -33,7 +40,6 @@ namespace WebApi.Controllers
 
             return results;
         }
-
         [HttpGet("{id}")]  //api/ranking/3 처럼 파라미터를 받아서 사용한다는 것을 명시
         public GameResult GetGameResults(int id)
         {
@@ -43,6 +49,38 @@ namespace WebApi.Controllers
 
             return result;
         }
+        // Update
+        [HttpPut]
+        public bool UpdateGameResult([FromBody] GameResult gameResult)
+        {
+            var findResult = _context.GameResults
+                .Where(x=> x.Id== gameResult.Id)
+                .FirstOrDefault();
 
+            if(findResult ==null)
+                return false;
+
+            findResult.UserName = gameResult.UserName;
+            findResult.Score = gameResult.Score;
+            _context.SaveChanges();
+
+            return true;
+        }
+        // Delete
+        [HttpDelete("{id}")]
+        public bool DeleteGameResult(int id)
+        {
+            var findResult = _context.GameResults
+                .Where(x => x.Id == id)
+                .FirstOrDefault();
+
+            if (findResult == null)
+                return false;
+
+            _context.GameResults.Remove(findResult);
+            _context.SaveChanges();
+
+            return true;
+        }
     }
 }

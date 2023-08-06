@@ -21,9 +21,18 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddScoped<RankingService>();
+builder.Services.AddHttpClient<RankingService>(c =>
+{
+	c.BaseAddress = new Uri("https://localhost:44320");
+});
+/*builder.Services.AddHttpsRedirection(options =>
+{
+	options.HttpsPort = 44320;
+});*/
 
 var app = builder.Build();
+
+//app.UseHttpsRedirection();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

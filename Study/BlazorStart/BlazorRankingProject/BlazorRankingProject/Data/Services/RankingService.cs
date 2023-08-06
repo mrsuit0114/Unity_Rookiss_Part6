@@ -1,65 +1,64 @@
-﻿using BlazorRankingProject.Data.Models;
+﻿using Newtonsoft.Json;
+using SharedData.Models;
+using System.Text;
 
 namespace BlazorRankingProject.Data.Services
 {
 	public class RankingService
 	{
-		ApplicationDbContext _context;
+		HttpClient _httpClient;
 
-		public RankingService(ApplicationDbContext context)
+		public RankingService(HttpClient client)
 		{
 			// dependency injection
-			_context = context;
+			_httpClient = client;
 		}
 
+		//RankingController.cs 에서는 자동으로 Json으로 파싱해주는데 여기서는 해줘야한다함
 		//Create
-		public Task<GameResult> AddGameResult(GameResult gameResult)
+		public async Task<GameResult> AddGameResult(GameResult gameResult)
 		{
-			_context.GameResults.Add(gameResult);
-			_context.SaveChanges();  //db 실제 저장
+			string jsonStr = JsonConvert.SerializeObject(gameResult);
+			var content = new StringContent(jsonStr, Encoding.UTF8, "application/json");
+			var result = await _httpClient.PostAsync("api/ranking", content);
 
-			return Task.FromResult(gameResult);  // 용도가 있나 리턴해도 안쓰던데 Read에서는
+			if (result.IsSuccessStatusCode == false)
+				throw new Exception("AddFailed");
+
+			var resultContent = await result.Content.ReadAsStringAsync();
+			GameResult resGameResult = JsonConvert.DeserializeObject<GameResult>(resultContent);
+			return resGameResult;
+
 		}
-
 		// Read
-		public Task<List<GameResult>> GetGameResultAsync()
+		public async Task<List<GameResult>> GetGameResultAsync()
 		{
-			List<GameResult> result = _context.GameResults.OrderByDescending(item=> item.Score).ToList();
-			return Task.FromResult(result);
-		}
+			var result = await _httpClient.GetAsync("api/ranking");
 
+			var resultContent = await result.Content.ReadAsStringAsync();
+			List<GameResult> resGameResults = JsonConvert.DeserializeObject<List<GameResult>>(resultContent);
+			return resGameResults;
+        }
 		//Update
-		public Task<bool> UpdateGameResult(GameResult gameResult)
+		public async Task<bool> UpdateGameResult(GameResult gameResult)
 		{
-			var findResult = _context.GameResults
-				.Where(x => x.Id == gameResult.Id)
-				.FirstOrDefault();
+            string jsonStr = JsonConvert.SerializeObject(gameResult);
+            var content = new StringContent(jsonStr, Encoding.UTF8, "application/json");
+            var result = await _httpClient.PutAsync("api/ranking", content);
 
-			if(findResult == null)
-				return Task.FromResult(false);
+            if (result.IsSuccessStatusCode == false)
+                throw new Exception("UpdateFailed");
 
-			findResult.UserName = gameResult.UserName;
-			findResult.Score = gameResult.Score;
-			_context.SaveChanges();
-
-			return Task.FromResult(true);
-		}
-
-
+            return true;
+        }
 		//Delete
-		public Task<bool> DeleteGameResult(GameResult gameResult)
+		public async Task<bool> DeleteGameResult(GameResult gameResult)
 		{
-            var findResult = _context.GameResults
-                .Where(x => x.Id == gameResult.Id)
-                .FirstOrDefault();
+			var result = await _httpClient.DeleteAsync($"api/ranking/{gameResult.Id}");
+			if (result.IsSuccessStatusCode == false)
+                throw new Exception("DeleteFailed");
 
-            if (findResult == null)
-                return Task.FromResult(false);
-
-			_context.GameResults .Remove(gameResult);
-            _context.SaveChanges();
-
-			return Task.FromResult(true);
+			return true;
         }
 	}
 }

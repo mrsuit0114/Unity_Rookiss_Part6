@@ -84,3 +84,6 @@ D:\ForUnity\Unity_Rookiss_Part6\Study\BlazorStart\BlazorRankingProject\BlazorRan
 D:\ForUnity\Unity_Rookiss_Part6\Study\BlazorStart\BlazorRankingProject\BlazorRankingProject\obj\Debug\net7.0\BlazorRankingProject.pdb
 D:\ForUnity\Unity_Rookiss_Part6\Study\BlazorStart\BlazorRankingProject\BlazorRankingProject\obj\Debug\net7.0\BlazorRankingProject.genruntimeconfig.cache
 D:\ForUnity\Unity_Rookiss_Part6\Study\BlazorStart\BlazorRankingProject\BlazorRankingProject\obj\Debug\net7.0\ref\BlazorRankingProject.dll
+D:\ForUnity\Unity_Rookiss_Part6\Study\BlazorStart\BlazorRankingProject\BlazorRankingProject\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\ForUnity\Unity_Rookiss_Part6\Study\BlazorStart\BlazorRankingProject\BlazorRankingProject\bin\Debug\net7.0\SharedData.dll
+D:\ForUnity\Unity_Rookiss_Part6\Study\BlazorStart\BlazorRankingProject\BlazorRankingProject\bin\Debug\net7.0\SharedData.pdb
