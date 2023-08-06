@@ -20,7 +20,7 @@ namespace BlazorRankingProject.Data.Services
 		{
 			string jsonStr = JsonConvert.SerializeObject(gameResult);
 			var content = new StringContent(jsonStr, Encoding.UTF8, "application/json");
-			var result = await _httpClient.PostAsync("api/ranking", content);
+			var result = await _httpClient.PostAsync("https://localhost:7098/api/ranking", content);
 
 			if (result.IsSuccessStatusCode == false)
 				throw new Exception("AddFailed");
@@ -33,7 +33,7 @@ namespace BlazorRankingProject.Data.Services
 		// Read
 		public async Task<List<GameResult>> GetGameResultAsync()
 		{
-			var result = await _httpClient.GetAsync("api/ranking");
+			var result = await _httpClient.GetAsync("https://localhost:7098/api/ranking");
 
 			var resultContent = await result.Content.ReadAsStringAsync();
 			List<GameResult> resGameResults = JsonConvert.DeserializeObject<List<GameResult>>(resultContent);
@@ -44,7 +44,7 @@ namespace BlazorRankingProject.Data.Services
 		{
             string jsonStr = JsonConvert.SerializeObject(gameResult);
             var content = new StringContent(jsonStr, Encoding.UTF8, "application/json");
-            var result = await _httpClient.PutAsync("api/ranking", content);
+            var result = await _httpClient.PutAsync("https://localhost:7098/api/ranking", content);
 
             if (result.IsSuccessStatusCode == false)
                 throw new Exception("UpdateFailed");
@@ -54,7 +54,7 @@ namespace BlazorRankingProject.Data.Services
 		//Delete
 		public async Task<bool> DeleteGameResult(GameResult gameResult)
 		{
-			var result = await _httpClient.DeleteAsync($"api/ranking/{gameResult.Id}");
+			var result = await _httpClient.DeleteAsync($"https://localhost:7098/api/ranking/{gameResult.Id}");
 			if (result.IsSuccessStatusCode == false)
                 throw new Exception("DeleteFailed");
 

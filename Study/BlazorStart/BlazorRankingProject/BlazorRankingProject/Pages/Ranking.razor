@@ -104,7 +104,7 @@
 
     async Task DeleteGameResult(GameResult gameResult)
     {
-        RankingService.DeleteGameResult(gameResult);
+        var result = RankingService.DeleteGameResult(gameResult);
         _gameResults = await RankingService.GetGameResultAsync();
     }
 

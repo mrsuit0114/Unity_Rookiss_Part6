@@ -1,6 +1,33 @@
+using Newtonsoft.Json;
+using SharedData.Models;
+
 namespace BlazorRankingProject.Data
 {
-	public class WeatherForecastService
+    public class WeatherForecastService
+    {
+        HttpClient _httpClient;
+
+        public WeatherForecastService(HttpClient client)
+        {
+            // dependency injection
+            _httpClient = client;
+        }
+
+        // Read
+
+        public async Task<List<WeatherForecast>> GetForecastAsync()
+        {
+            var result = await _httpClient.GetAsync("https://localhost:7098/WeatherForecast");
+
+            var resultContent = await result.Content.ReadAsStringAsync();
+            List<WeatherForecast> resWeatherResults = JsonConvert.DeserializeObject<List<WeatherForecast>>(resultContent);
+            return resWeatherResults;
+
+        }
+
+    }
+
+    /*public class WeatherForecastService
 	{
 		private static readonly string[] Summaries = new[]
 		{
@@ -16,5 +43,5 @@ namespace BlazorRankingProject.Data
 				Summary = Summaries[Random.Shared.Next(Summaries.Length)]
 			}).ToArray());
 		}
-	}
+	}*/
 }
